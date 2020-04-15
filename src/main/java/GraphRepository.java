@@ -23,7 +23,9 @@ public class GraphRepository {
         return graph;
     }
 
-    public List<String> dests(String source) {
+
+
+    private List<String> dests(String source) {
         List<String> dests = new ArrayList<>();
         for (Node node : findAll()) {
             if (node.getSource().equals(source)) {
@@ -32,6 +34,8 @@ public class GraphRepository {
         }
         return dests;
     }
+
+
 
     public double[][] matrix(int len, String[] nodes) {
         List<String> dests;

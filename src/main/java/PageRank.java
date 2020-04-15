@@ -1,22 +1,20 @@
 import java.util.*;
 
-
-public class Main {
+public class PageRank {
     public static void main(String[] args) {
 
         GraphRepository repository = new GraphRepository();
         List<Node> graph = repository.findAll();
+        final double d = 0.85;
 
         Set<String> nodesSet = new HashSet<>();
         graph.forEach(node -> nodesSet.add(node.getSource()));
         String[] nodes = nodesSet.toArray(new String[0]);
-        System.out.println(Arrays.toString(nodes));
-
         int len = nodesSet.size();
+
 
         double[][] M = repository.matrix(len, nodes);
         double[] v = new double[len];
-
         for (int i = 0; i < len; i++) {
             v[i] = (double) 1 / len;
         }
@@ -24,6 +22,7 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             v = multplctn(M, v);
         }
+
 
         System.out.println(Arrays.toString(v));
     }
@@ -41,9 +40,6 @@ public class Main {
 
         return res;
     }
-
-
-
 
 
 }

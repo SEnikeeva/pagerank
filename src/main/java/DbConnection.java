@@ -1,9 +1,6 @@
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class DbConnection {
 
@@ -19,8 +16,9 @@ public class DbConnection {
 
 
             String driver= "org.postgresql.Driver";
-            String url = "jdbc:postgresql://database-2-instance-1.ceuwom91dpva.us-east-1.rds.amazonaws.com:5432/auroradb";
+            String url = "jdbc:postgresql://database-1-instance-1.ceuwom91dpva.us-east-1.rds.amazonaws.com:5432/suroradb";
             String user= "postgres";
+//            String url = "jdbc:postgresql://localhost:5432/postgres";
             String password="7c056266";
             try {
                 Class.forName(driver);
